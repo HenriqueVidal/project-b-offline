@@ -1,2 +1,3 @@
-# project b-offline
+# Project B
+
  Mini Jogo baseado em turnos
