@@ -1,14 +1,24 @@
 body {  
-  background-image: url('../images/wall.png');
+/*   background-image: url('../images/wall.png');
   background-repeat: no-repeat;
-  background-size:  cover;
-  background-color: black;
+  background-size:  cover; */
+  background-color: #00000094;;
   margin: 0px;
   padding: 6px;  
   font-family: Arial, Helvetica, sans-serif;
 }
 header h1 {
   color: #962c2ce0;
+}
+.logo {
+  /* background-image: linear-gradient(180deg, #b0e9de, transparent); */
+  /* background-color: #b0e9de; 
+  border: 0.5px solid dimgray;*/
+  border-radius: 6px;
+  top: -40px;
+  margin-left: 40px;
+  width: 250px;
+  /* clip-path: polygon(17% 8%, 81% 8%, 100% 30%, 100% 69%, 81% 91%, 19% 91%, 0 71%, 0 30%); */
 }
 main {
   background-color: #d5d5d5fa;  
