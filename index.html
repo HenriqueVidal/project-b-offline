@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project B</title>
+    <link rel="stylesheet" href="styles/main.css" type="text/css" media="all" />  
+    <link rel="stylesheet" href="styles/battleground.css">  
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="js/gamemanager.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/items.js"></script>
+</head>
+<body>
+    <header>
+      <h1>Project B</h1>
+    </header>
+    <main>
+      <h2>Escolha sua Classe:</h2>
+      <div class="classImgDiv">
+          <div class="warriorDiv">            
+            <a href="#" onclick="GameMain.setGameStart('Samurai')">
+              <img id="Warrior" src="images/samuraijogador.png" alt="Warrior"/></a>       
+            <aside class="warriorStats">
+              <p><strong>Classe: </strong><br /> <span class="classe">Samurai</span></p>
+              <p><strong class="attributeP">Atributos:</strong> <br>
+              Vida Máx.: 120<br>
+              Escudo: 100 <br>
+              Ataque: 35 <br>
+              Defesa: 19 <br></p><p>
+              <strong>Habilidade:</strong> <br>
+              +25 de Vida
+              </p>
+            </aside>
+          </div>      
+        
+        <div class="archerDiv">
+          <a href="#" onclick="GameMain.setGameStart('Arqueiro')">
+          <img id="archer" src="images/arqueirojogador.png" alt="Arqueiro"/></a>
+          <aside class="archerStats">
+            <p><strong>Classe: </strong><br /> <span class="classe">Arqueiro</span></p>
+            <p><strong class="attributeP">Atributos:</strong> <br>
+            Vida Máx.: 80<br>
+            Escudo: 100 <br>
+            Ataque: 45 <br>
+            Defesa: 8<br></p><p>
+            <strong>Habilidade:</strong> <br>
+            Ataque Duplo
+            </p>
+          </aside>
+        </div>
+        <div class="knightDiv">
+          <a href="#" onclick="GameMain.setGameStart('Cavaleiro')">
+          <img id="knight" src="images/cavaleirojogador.png" alt="Cavaleiro"/></a>
+          <aside class="knightStats">
+            <p><strong>Classe: </strong><br /> <span class="classe">Cavaleiro</span></p>
+            <p><strong class="attributeP">Atributos:</strong> <br>
+            Vida Máx.: 140<br>
+            Escudo: 100 <br>
+            Ataque: 30 <br>
+            Defesa: 18<br></p><p>
+            <strong>Habilidade:</strong> <br>
+            +20 de Escudo
+          </aside>
+        </div>
+        <div class="monkDiv">
+          <a href="#" onclick="GameMain.setGameStart('Monge')">
+          <img id="monk" src="images/mongejogador.png" alt="Monge"/></a>
+          <aside class="monkStats">
+            <p><strong>Classe: </strong><br /> <span class="classe">Monge</span></p>
+            <p><strong class="attributeP">Atributos:</strong> <br>
+            Vida Máx.: 160<br>
+            Escudo: 60 <br>
+            Ataque: 26 <br>
+            Defesa: 26<br></p><p>
+            <strong>Habilidade:</strong> <br>
+            +5 de Defesa
+          </aside>
+        </div>
+        <div class="nunDiv">
+          <a href="#" onclick="GameMain.setGameStart('Freira')">
+          <img id="monk" src="images/freirajogador.png" alt="Freira"/></a>
+          <aside class="nunStats">
+            <p><strong>Classe: </strong><br /> <span class="classe">Freira</span></p>
+            <p><strong class="attributeP">Atributos:</strong> <br>
+            Vida Máx.: 140<br>
+            Escudo: 80 <br>
+            Ataque: 28 <br>
+            Defesa: 24 <br></p><p>
+            <strong>Habilidade:</strong> <br>
+            +5 de Defesa
+          </aside>
+        </div>
+      </div>
+      
+    </main>
+    <div id="gameInterface">
+      <div class="mainContainer">
+      <div class="container">
+        <div class="grid1">
+          <div class="playerInterface"></div>
+        </div>
+      
+        <div class="grid2">
+          <div class="grid2Content">
+            <div class="headerInterface"></div>
+            <div class="footerInterface"></div>
+          </div>
+       </div>
+      </div>
+      </div>
+    </div>
+        
+    <div class="loseCondition">Você Perdeu!</div>
+    <div class="winCondition">Você Venceu!</div>
+</body>
+</html>

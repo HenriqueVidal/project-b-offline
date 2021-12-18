@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px;
+  margin: 6px auto;
+  max-width: 1200px;
+}
+.samuraiHelmet, .samuraiBelt, .lightArmor, .heavyArmor, .lightSword, .katana, .twoHandedSword, .samuraiShield, .lightShield, .heavyShield {
+  display: block;
+  margin: 4px auto;
+  width: 200px;
+  padding: 2px
+}
+.container img {
+  border-radius: 4px;
+/*   border: 1px solid dimgray; */
+  height: 200px;
+}
+.itemStats {
+  border-radius: 4px;
+  border: 1px solid dimgray;
+  padding: 0px;
+  min-height: 110px;
+  background-color: #f3f2ed;
+}
+.itemStats p {
+  margin: auto;
+  padding: 10px;
+}

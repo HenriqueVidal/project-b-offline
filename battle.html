@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project B</title>
+  <link rel="stylesheet" href="styles/battle.css">
+</head>
+
+<body>
+  <header>
+    <h1>Project B</h1>
+  </header>
+  <main>
+    <div class="container">  
+      <div class="grid1">
+        <div id="playerNameDiv">
+          <p>Jogador:   <span class="playerName"> Yasuke</span></p>
+          </div>
+      <div class="playerMain">        
+
+        <img src="images/espadachimjogador.png" alt="player" />          
+        <aside class="playerStats">
+            <p><strong>Classe: </strong><br> <span class="classe">Cavaleiro</span>
+            <strong class="attributeP">Atributos:</strong> <br>
+              Vida Máx.: 100<br>
+              Mana: 100 <br>
+              Ataque: 25 <br>
+              Defesa: 17 <br>
+            </p>
+        </aside>           
+
+      </div>
+      <div class="playerHealth">
+        <p>Vida: </p>
+        <progress class="playerBarHealth" value="80" max="100"> </progress>
+      </div> <hr>
+      
+    <div class="playerMoves">
+      <input type="button" name="atacar" id="atkbutton" value="Atacar" />
+      <input type="button" name="defense" id="defbutton" value="Defender" />
+      <input type="button" name="skill" id="sklbutton" value="Habilidade" />
+      <input type="button" name="quit" id="quitbutton" value="Fugir!" />
+    </div>
+    </div>    
+
+      <!-- <hr>
+      <div class="battleLog">
+        <p>Log: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ex voluptatum aspernatur magnam ea consequuntur veritatis accusantium dolorem, omnis in, quis earum nesciunt a odit eaque expedita similique blanditiis voluptatem!</p>
+      </div> <hr> -->
+
+      <div class="grid2">
+        <div id="enemyNameDiv">
+        <p>Inimigo:   <span class="enemyName">Mayumi</span></p>
+        </div>
+        <div class="enemyMain">
+
+          <img src="images/gozeninimigo.png" alt="enemy" />
+                   <aside class="enemyStats">
+            <p><strong>Classe: </strong><br /> <span class="classe">Espadachim</span>
+            <strong class="attributeP">Atributos:</strong> <br>
+            Vida Máx.: 100<br>
+            Mana: 100 <br>
+            Ataque: 25 <br>
+            Defesa: 17 <br>
+            </p>
+          </aside>     
+                  
+        </div>          
+        <div class="enemyHealth">
+          <p>Vida: </p>
+          <progress class="enemyBarHealth" value="90" max="100"></progress>
+        </div> <hr> 
+        <div class="battleLogDiv"> <div class="battleLog">  <span>Relatório:</span>        <p> </p>        </div>
+      </div>
+    </div>
+    </div>
+    </main>
+  <script src="js/enemy.js"></script>
+  <script src="js/player.js"></script>
+</body>
+</html>
