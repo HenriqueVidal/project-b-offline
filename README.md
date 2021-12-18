@@ -1,3 +1,4 @@
 # Project B
 
- Mini Jogo baseado em turnos
+https://henriquevidal.github.io/project-b-offline/
+Mini Jogo baseado em turnos
