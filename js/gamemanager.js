@@ -85,7 +85,7 @@ let GameMain = {
               enemy = new Enemy("Ninja", 80, 100, 32, 10);
               break;
             case 2:
-              enemy = new Enemy("Cavaleiro", 120, 100, 25, 20);
+              enemy = new Enemy("Cavaleiro", 120, 100, 30, 20);
               break;              
             case 3:
               enemy = new Enemy("Gozen", 140, 100, 36, 20);
