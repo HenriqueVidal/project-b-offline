@@ -1,6 +1,12 @@
 console.log('Game Starting...');
-let playerTurnEnded = false; let enemyTurnEnded = false;
 let data = new Date; let horaAtual = data.getHours() + ':' + data.getMinutes() + ":" + data.getSeconds();
+let playerTurnEnded = false; let enemyTurnEnded = false;
+let PlayerAction; let EnemyAction;
+const setAttackAction = function(){PlayerAction = "atk";removeMoves();GameActions();playerTurnEnded=true;};
+const setDefenseAction = function(){PlayerAction = "def";removeMoves();GameActions();playerTurnEnded=true;};
+const setSkillAction = function(){PlayerAction = "skl";removeMoves();GameActions();playerTurnEnded=true;};
+const removeMoves = function(){let getPlayerMoves = document.querySelector(".playerMoves");getPlayerMoves.style.visibility = "hidden";};
+const returnMoves = function(){let getPlayerMoves = document.querySelector(".playerMoves");getPlayerMoves.style.visibility = "visible";};    
 
 const logToBottom = function() {
   let getBattleLog = document.querySelector(".battleLog"); 
@@ -132,23 +138,104 @@ let GameMain = {
         getFooterBattleground.innerHTML = '<div class="battleLogDiv"> <div class="battleLog">  <p><span class="turns">Turno ' + turns + '</span></p></div></div>'; 
         console.log("The Enemy appears!");
          
-    },
-    //descontinuada
-    attackButton: function() {        
-        enemy.health = enemy.health - (player.attack - enemy.defense);
-        enemyBarHealth.value = enemy.health;
+    }
+};
+ //futuro gamemain 
 
-        let setBattleLog = document.querySelector(".battleLog > p");
-        let damageLog = document.createTextNode("Dano causado: X, \n"); 
-        setBattleLog.append(damageLog);
+let GameActions = async() =>  {
+  enemyChooseAtk(); await delay(1000);
+    //ações do turno
+  if ((PlayerAction == "atk") && (EnemyAction == "atk")) {
+    PlayerHits();await delay(1000); 
+    if (enemy.health <= 0) {
+      WinCondition();returnMoves();
+    } else {
+      EnemyHits();
+    }; await delay(500);
+    if (player.health <= 0) {
+      LoseCondition();returnMoves();
+    } else {
+      await delay(1500); returnMoves(); playerTurnEnded=false;
+    }
+    
 
-        this.enemyTurn()
-    },
-}
-        
+  } else if ((PlayerAction == "atk") && (EnemyAction == "def")) {
+    PlayerHitShield();await delay(1000); 
+      if (enemy.health <= 0) {
+        WinCondition();returnMoves();
+      } else {
+        EnemyDefense();
+      }; await delay(500);
+      if (player.health <= 0) {
+        LoseCondition();returnMoves();
+      } else {
+        await delay(1500); returnMoves(); playerTurnEnded=false;          
+      }
 
+  } else if ((PlayerAction == "atk") && (EnemyAction == "skl")) {
+    PlayerHits();await delay(1000);      
+    if (enemy.health <= 0) {
+      WinCondition();returnMoves();
+    } else {
+      EnemySkill();
+    }; await delay(500);
+    if (player.health <= 0) {
+      LoseCondition();returnMoves();
+    } else {
+      await delay(1500); returnMoves(); playerTurnEnded=false;          
+    }
 
-/*
-let Yasuke = new Player("Samurai", 120, 100, 35, 22);
-let Yasuo = new Player("Ronin", 100, 100, 35, 12);
- */
+  } else if ((PlayerAction == "def") && (EnemyAction == "atk")) {
+    PlayerDefense();await delay(1000); 
+    if (enemy.health <= 0) {WinCondition();returnMoves();
+    } else{
+      EnemyHitShield();
+    }; await delay(500);
+    if (player.health <= 0){LoseCondition();returnMoves();
+    }else{
+      await delay(1500); returnMoves(); playerTurnEnded=false;
+    }
+
+  } else if ((PlayerAction == "def") && (EnemyAction == "def")) {
+    PlayerDefense();await delay(1000); if (enemy.health <= 0) {WinCondition();returnMoves();await delay(1500);} else{EnemyHitShield();}; await delay(500);
+ if (player.health <= 0){LoseCondition();returnMoves();
+    }else{await delay(1500); returnMoves(); playerTurnEnded=false;
+    }
+
+  } else if ((PlayerAction == "def") && (EnemyAction =="skl")) {
+    PlayerDefense();await delay(1000); if (enemy.health <= 0) {WinCondition();returnMoves();await delay(1500);} else{EnemySkill(); }; await delay(500); if (player.health <= 0){LoseCondition();returnMoves();
+    }else{await delay(1500); returnMoves(); playerTurnEnded=false;
+    }
+
+  } else if ((PlayerAction == "skl") && (EnemyAction == "atk")) {
+    if(player.classType == "Monge"){MongeSkill();playerTurnEnded=false;}
+    else if(player.classType == "Samurai"){SamuraiSkill();playerTurnEnded=false;}
+    else if(player.classType == "Arqueiro"){ArqueiroSkill();playerTurnEnded=false;}
+    else if(player.classType == "Cavaleiro"){CavaleiroSkill();playerTurnEnded=false;}
+    else if(player.classType == "Freira"){FreiraSkill();playerTurnEnded=false;}
+    await delay(1000); 
+    if (enemy.health <= 0) {returnMoves();WinCondition();} 
+    else{EnemySkill();await delay(1500); returnMoves(); }
+
+  } else if ((PlayerAction == "skl") && (EnemyAction == "def")) {
+    if(player.classType == "Monge"){MongeSkill();playerTurnEnded=false;}
+    else if(player.classType == "Samurai"){SamuraiSkill();playerTurnEnded=false;}
+    else if(player.classType == "Arqueiro"){ArqueiroSkill();playerTurnEnded=false;}
+    else if(player.classType == "Cavaleiro"){CavaleiroSkill(); playerTurnEnded=false;}
+    else if(player.classType == "Freira"){FreiraSkill();playerTurnEnded=false;}
+    await delay(1000);
+    if (enemy.health <= 0) {returnMoves();WinCondition();} 
+    else{EnemySkill();await delay(1500); returnMoves(); }
+
+  } else { //Player skl & Enemy skl
+    if(player.classType == "Monge"){MongeSkill(); playerTurnEnded=false;}
+    else if(player.classType == "Samurai"){SamuraiSkill(); playerTurnEnded=false;}
+    else if(player.classType == "Arqueiro"){ArqueiroSkill(); playerTurnEnded=false;}
+    else if(player.classType == "Cavaleiro"){CavaleiroSkill(); playerTurnEnded=false;}
+    else if(player.classType == "Freira"){FreiraSkill();playerTurnEnded=false;}
+    await delay(1000);
+    if (enemy.health <= 0) {returnMoves();WinCondition();} 
+    else{EnemySkill(); await delay(1500); returnMoves();}
+  }
+};
+
