@@ -16,6 +16,9 @@ body {
   justify-content: space-between;
   align-content: center;
 }
+.topContainer {  
+  padding: 4px;
+}
 header {
   display: flex;
 }
