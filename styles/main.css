@@ -4,8 +4,17 @@ body {
   background-size:  cover;
   background-color: black;
   margin: 0px;
-  padding: 6px;  
+ /*  padding: 6px;   */
   font-family: Arial, Helvetica, sans-serif;
+}
+.globalContainer {
+  padding: 0px;  
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
 }
 header {
   display: flex;
@@ -72,4 +81,15 @@ main > h2 {
   font-size: 16px;
   font-weight: bold;
   line-height: 1.5rem;
+}
+footer {
+  margin-top: 40px;
+}
+.footerDiv {  
+  color: #212529;
+  background-color: lightgray;
+  line-height: 1.3rem;
+  font-size: 14px;
+  font-weight: 400;  
+  text-align: center;
 }
