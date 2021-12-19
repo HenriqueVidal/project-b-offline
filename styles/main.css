@@ -85,9 +85,9 @@ main > h2 {
 footer {
   margin-top: 40px;
 }
-.footerDiv {  
-  color: #212529;
-  background-color: lightgray;
+.footerDiv { 
+  color: #ffffff;
+  background-color: #1a1919;
   line-height: 1.3rem;
   font-size: 14px;
   font-weight: 400;  
