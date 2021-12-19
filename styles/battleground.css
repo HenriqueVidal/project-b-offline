@@ -1,4 +1,3 @@
-
 .mainContainer {
  /* visibility: hidden;*/
   display: none;
@@ -47,8 +46,8 @@
   grid-column-end: 2;
 }
 .grid2 {
-  justify-content: start;
-  margin: auto;
+  justify-content: start;  
+  margin: 0px auto auto auto;
   grid-column-start: 2;
   grid-column-end: 3;
 }

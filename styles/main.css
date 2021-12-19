@@ -10,7 +10,7 @@ body {
 .globalContainer {
   padding: 0px;  
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
