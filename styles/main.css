@@ -7,8 +7,8 @@ body {
   padding: 6px;  
   font-family: Arial, Helvetica, sans-serif;
 }
-header h1 {
-  color: #962c2ce0;
+header {
+  display: flex;
 }
 .logo {
   /* background-image: linear-gradient(180deg, #b0e9de, transparent); */
@@ -16,7 +16,7 @@ header h1 {
   border: 0.5px solid dimgray;*/
   border-radius: 6px;
   top: -40px;
-  margin-left: 40px;
+  margin: auto;
   width: 250px;
   /* clip-path: polygon(17% 8%, 81% 8%, 100% 30%, 100% 69%, 81% 91%, 19% 91%, 0 71%, 0 30%); */
 }
