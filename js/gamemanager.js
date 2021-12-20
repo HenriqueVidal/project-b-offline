@@ -157,8 +157,6 @@ let GameActions = async() =>  {
     } else {
       await delay(1500); returnMoves(); playerTurnEnded=false;
     }
-    
-
   } else if ((PlayerAction == "atk") && (EnemyAction == "def")) {
     PlayerHitShield();await delay(1000); 
       if (enemy.health <= 0) {
