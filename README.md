@@ -7,7 +7,7 @@ Mini Jogo de batalha baseado em turnos
 How to Play:
 
 Selecione uma classe,
-Procure um inimigo,
+Procure um inimigo;
 
 Sistema de Batalha: 
 
