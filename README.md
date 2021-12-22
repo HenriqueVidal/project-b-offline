@@ -2,7 +2,7 @@
 
 https://henriquevidal.github.io/project-b-offline/
 
-Mini Jogo de batalha baseado em turnos
+Mini Jogo de batalha baseado em turnos;
 
 How to Play:
 
