@@ -11,8 +11,8 @@ Procure um inimigo;
 
 Sistema de Batalha: 
 
-Ataque: Ataque do jogador - defesa do inimigo;
+Ataque: Ataque direto à vida do inimigo;
 
-Defender: Ataque causa ⅓ do dano na vida do inimigo, caso jogador receba dano, será infrigido em seu escudo;
+Defender: Causa ⅓ do do seu dano de ataque na vida do inimigo, caso jogador receba dano, será afetado seu escudo;
 
 Habilidade: Utiliza a habilidade específica da classe uma única vez;
