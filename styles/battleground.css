@@ -120,7 +120,7 @@
 .battleLog { 
   background-color: white;
   display: flex; 
-  /*align-items: flex-end; */
+  /* align-items: flex-end; */
   overflow: auto;
   margin: 0px auto;
   padding: 5px;

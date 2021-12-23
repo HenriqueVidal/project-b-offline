@@ -1,5 +1,4 @@
 let player; let turns = 1;
-const delay = ms => new Promise(res => setTimeout(res, ms));
 
 function Player(classType, health, shield, attack, defense) {
     this.classType = classType;
@@ -8,7 +7,7 @@ function Player(classType, health, shield, attack, defense) {
     this.attack = attack;
     this.defense = defense;
 };
-const GameTurn = function() {    
+const GameTurn = () => {    
     let getBattleLogP = document.querySelector(".battleLog p");    
     turns++;   
     logToBottom();
@@ -34,13 +33,13 @@ const PlayerHits = async() => {
         let critRate = 40;  let critDmg = player.attack * 1.5;
         console.log(critChance);
            if (critChance < critRate) {           
-           oldAtk = player.attack;
-           player.attack = critDmg;
-           console.log("dano critico: " + critDmg);
-           enemy.health = enemy.health - player.attack;
-           enemy.health = enemy.health + enemy.defense;
-           getBattleLogP.innerHTML += "<br /> Dano causado: " + (player.attack - enemy.defense);
-           player.attack = oldAtk;
+            oldAtk = player.attack;
+            player.attack = critDmg;
+            console.log("dano critico: " + critDmg);
+            enemy.health = enemy.health - player.attack;
+            enemy.health = enemy.health + enemy.defense;
+            getBattleLogP.innerHTML += "<br /> Dano causado: " + (player.attack - enemy.defense);
+            player.attack = oldAtk;
            } else {
             enemy.health = enemy.health - player.attack;
             enemy.health = enemy.health + enemy.defense;
@@ -134,17 +133,31 @@ const EnemyHits = async() => {
         getPlayerImg.style.border = "1px solid red";
         getPlayerImg.style.backgroundImage = "linear-gradient(180deg, red, transparent)";
             //ataque inimigo
-        player.health = player.health - enemy.attack;
-        player.health = player.health + player.defense;
+        let oldAtk;
+        let critChance = parseInt(Math.random() * 100);
+        let critRate = 40;  let critDmg = enemy.attack * 1.5;
+        console.log(critChance);
+        if (critChance < critRate) {           
+            oldAtk = enemy.attack;
+            enemy.attack = critDmg;
+            console.log("dano critico: " + critDmg);
+            player.health = player.health - enemy.attack;
+            player.health = player.health + player.defense;
+            getBattleLogP.innerHTML += "<br /> Dano recebido: " + (enemy.attack - player.defense);
+            enemy.attack = oldAtk;
+        } else {
+            player.health = player.health - enemy.attack;
+            player.health = player.health + player.defense;          
+            getBattleLogP.innerHTML += "<br /> Dano recebido: " + (enemy.attack - player.defense);
+        }
         getPlayerHealth.innerHTML = "Vida: " + player.health;
-        getPlayerBarHealth.value = player.health;      
-        getBattleLogP.innerHTML += "<br /> Dano recebido: " + (enemy.attack - player.defense);  
-        await delay(100);     
+        getPlayerBarHealth.value = player.health;
+        await delay(100);
+        logToBottom();   
         getEnemyImg.style.backgroundImage = "linear-gradient(180deg, #b0e9de, transparent)"; 
         getPlayerImg.style.border = "1px solid dimgray";
         getEnemyImg.style.border = "1px solid dimgray";        
         getPlayerImg.style.backgroundImage = "linear-gradient(180deg, #b0e9de, transparent)";
-        logToBottom();
         GameTurn(); 
 }
 const EnemyDefense = async() => {

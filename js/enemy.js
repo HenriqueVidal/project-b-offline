@@ -29,10 +29,7 @@ const EnemySkill = async() => {
   GameTurn();
 };  
 
-
-
-
-let enemyChooseAtk = async() => {
+let enemyChooseAtk = () => {
   let enemyAtk = Math.floor(Math.random() * Math.floor(5));
   switch(enemyAtk){
     case 0:

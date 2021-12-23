@@ -1,9 +1,9 @@
-const noSkill = function() {       
+const noSkill = () => {       
     let getBattleLogP = document.querySelector(".battleLog p");
     getBattleLogP.innerHTML += "<br/> Sem Habilidade disponível!";
     logToBottom();
 };
-const noShield = function() {       
+const noShield = () => {       
     let getBattleLogP = document.querySelector(".battleLog p");
     getBattleLogP.innerHTML += "<br/> Seu escudo está quebrado!";
     logToBottom();

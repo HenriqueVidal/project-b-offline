@@ -1,14 +1,15 @@
 console.log('Game Starting...');
+const delay = ms => new Promise(res => setTimeout(res, ms));
 let data = new Date; let horaAtual = data.getHours() + ':' + data.getMinutes() + ":" + data.getSeconds();
 let playerTurnEnded = false; let enemyTurnEnded = false;
 let PlayerAction; let EnemyAction;
-const setAttackAction = function(){PlayerAction = "atk";removeMoves();GameActions();playerTurnEnded=true;};
-const setDefenseAction = function(){PlayerAction = "def";removeMoves();GameActions();playerTurnEnded=true;};
-const setSkillAction = function(){PlayerAction = "skl";removeMoves();GameActions();playerTurnEnded=true;};
-const removeMoves = function(){let getPlayerMoves = document.querySelector(".playerMoves");getPlayerMoves.style.visibility = "hidden";};
-const returnMoves = function(){let getPlayerMoves = document.querySelector(".playerMoves");getPlayerMoves.style.visibility = "visible";};    
+const setAttackAction = () => {PlayerAction = "atk";removeMoves();GameActions();playerTurnEnded=true;};
+const setDefenseAction = () => {PlayerAction = "def";removeMoves();GameActions();playerTurnEnded=true;};
+const setSkillAction = () => {PlayerAction = "skl";removeMoves();GameActions();playerTurnEnded=true;};
+const removeMoves = () => {let getPlayerMoves = document.querySelector(".playerMoves");getPlayerMoves.style.visibility = "hidden";};
+const returnMoves = () => {let getPlayerMoves = document.querySelector(".playerMoves");getPlayerMoves.style.visibility = "visible";};    
 
-const logToBottom = function() {
+const logToBottom = () =>  {
   let getBattleLog = document.querySelector(".battleLog"); 
   getBattleLog.scrollTo(0, document.body.scrollHeight);
 };
@@ -69,11 +70,11 @@ let GameMain = {
                 player = new Player(classType, 140, 100, 30, 18);
                 break;
             case "Monge":
-              player = new Player(classType, 160, 60, 26, 26);
-              break;
+                player = new Player(classType, 160, 60, 26, 26);
+                break;
             case "Freira":
-            player = new Player(classType, 140, 80, 28, 24);
-            break;
+                player = new Player(classType, 140, 80, 28, 24);
+                break;
         }
 
         let getPlayerInterface = document.querySelector(".playerInterface");
@@ -140,7 +141,6 @@ let GameMain = {
          
     }
 };
- //futuro gamemain 
 
 let GameActions = async() =>  {
   enemyChooseAtk(); await delay(1000);

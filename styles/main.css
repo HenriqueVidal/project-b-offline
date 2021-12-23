@@ -54,7 +54,7 @@ main > h2 {
   padding: 4px;
 }
 .classImgDiv img {
-   background-image: linear-gradient(180deg, #b0e9de, transparent);
+  background-image: linear-gradient(180deg, #b0e9de, transparent);
   display: block;
   border: 0.5px solid dimgray;
   border-radius: 6px;
