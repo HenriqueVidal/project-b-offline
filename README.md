@@ -4,12 +4,12 @@ https://henriquevidal.github.io/project-b-offline/
 
 Mini Jogo de batalha baseado em turnos;
 
-### How to Play
+## How to Play
 
 Selecione uma classe,
 Procure um inimigo;
 
-### Sistema de Batalha
+## Sistema de Batalha
 
 Ataque: Ataque direto à vida do inimigo;
 
